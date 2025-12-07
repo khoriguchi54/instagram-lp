@@ -271,8 +271,8 @@ section {
 /* Problem Section */
 .problem {
     padding-top: 0;
-    margin-top: -180px;
-    /* Increased pull-up to -180px */
+    margin-top: -320px;
+    /* Increased pull-up to -320px for maximum tightness */
     position: relative;
     z-index: 2;
 }
@@ -372,11 +372,20 @@ section {
     align-items: center;
     justify-content: center;
     height: 100%;
-    /* Match container height roughly */
-    color: var(--primary-light);
-    font-size: 2rem;
-    padding-top: 60px;
-    /* visually align with card center approx */
+    padding-top: 30px;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.step-arrow i {
+    background: linear-gradient(135deg, #ff6b9d 0%, #f67280 100%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
 }
 
 .arrow-down {
@@ -662,6 +671,29 @@ section {
     border-radius: 0 0 15px 15px;
 }
 
+.solution-message {
+    margin-top: 60px;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, #ff6b9d 0%, #f67280 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+}
+
+.solution-message h3 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.solution-message p {
+    color: #fff;
+    opacity: 0.95;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
 .plan-name {
     font-size: 1.4rem;
     font-weight: 700;
@@ -853,6 +885,37 @@ section {
     margin-bottom: 20px;
     border: 3px solid var(--white);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Colorful icons for each benefit */
+.benefit-card:nth-child(1) .benefit-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.benefit-card:nth-child(2) .benefit-icon {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.benefit-card:nth-child(3) .benefit-icon {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+.benefit-card:nth-child(4) .benefit-icon {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    color: white;
+}
+
+.benefit-card:nth-child(5) .benefit-icon {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    color: white;
+}
+
+.benefit-card:nth-child(6) .benefit-icon {
+    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    color: white;
 }
 
 .benefit-card h3 {
@@ -1097,5 +1160,113 @@ section {
 
     .company-info dd {
         padding-left: 10px;
+    }
+}
+
+/* CTA Section - Make it SUPER prominent */
+.cta-tagline {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 30px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.cta-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fff;
+    background: transparent;
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    display: inline-block;
+    -webkit-text-stroke: 3px #ff6b9d;
+    text-stroke: 3px #ff6b9d;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.cta-desc {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ff6b9d;
+    opacity: 1;
+}
+
+/* Make the button SUPER prominent */
+.cta .btn-white {
+    font-size: 1.8rem;
+    padding: 30px 80px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ff6b9d 0%, #f67280 100%);
+    color: #fff;
+    border: none;
+    box-shadow: 0 10px 40px rgba(255, 107, 157, 0.4), 0 0 30px rgba(255, 107, 157, 0.3);
+    animation: button-pulse 2s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shine effect */
+.cta .btn-white::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    transform: skewX(-25deg);
+    animation: shine 5s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+
+    20% {
+        left: 150%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
+.cta .btn-white::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+    z-index: 1;
+}
+
+.cta .btn-white:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.cta .btn-white:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4), 0 0 50px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes button-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 50px rgba(255, 255, 255, 0.9);
     }
 }
