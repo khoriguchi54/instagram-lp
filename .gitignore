@@ -2,3 +2,8 @@
 .vscode/
 node_modules/
 *.log
+
+# 画像素材の原本（Drive上に保管、Gitには入れない）
+農園LP/
+ChatGPT Image *
+LP素材.png
